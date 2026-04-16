@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cohabitare | {% block title %}Arquitectura y Sostenibilidad{% endblock %}</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="{% url 'home' %}" class="logo">COHABITARE</a>
+            <div class="nav-links">
+                <a href="{% url 'home' %}">Inicio</a>
+                <a href="{% url 'proyectos' %}">Proyectos</a>
+                <a href="{% url 'servicios' %}">Servicios</a>
+                <a href="{% url 'perspectivas' %}">Perspectivas</a>
+                <a href="{% url 'acerca' %}">Acerca de</a>
+                <a href="{% url 'contacto' %}">Contacto</a>
+            </div>
+            <div class="theme-toggles">
+                <button class="theme-btn" id="btn-light">☀️</button>
+                <button class="theme-btn" id="btn-dark">🌙</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Cohabitare. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">📸</a>
+                <a href="#" aria-label="LinkedIn">💼</a>
+                <a href="#" aria-label="Twitter">🐦</a>
+                <a href="#" aria-label="Facebook">📘</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{% static 'core/js/main.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
